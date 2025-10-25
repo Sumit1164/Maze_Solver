@@ -1,6 +1,7 @@
 # 🌀 Maze Solver in C++  
 
-This project implements a **Maze Solver** in C++ using **DFS (Depth-First Search)** and **BFS (Breadth-First Search)** algorithms. It finds paths through a 2D maze and visualizes them in the console.  
+A **console-based maze solver** implemented in C++ using **DFS (Depth-First Search)** and **BFS (Breadth-First Search)** algorithms.  
+The program finds a path from the top-left to the bottom-right corner of a maze and displays it visually.  
 
 ---
 
@@ -8,7 +9,7 @@ This project implements a **Maze Solver** in C++ using **DFS (Depth-First Search
 
 - ✅ Solve a maze using **DFS (Backtracking)**  
 - ✅ Find the **shortest path using BFS**  
-- ✅ Visualize the path in the console using `*`  
+- ✅ Console visualization using symbols  
 - ✅ Works for any **N x M maze** (currently 5x5)  
 
 ---
@@ -16,33 +17,55 @@ This project implements a **Maze Solver** in C++ using **DFS (Depth-First Search
 ## 🔑 Key Concepts & Notes
 
 - **Maze Representation:**  
-  - `1` = path  
-  - `0` = wall  
+  - `1` = path (open space)  
+  - `0` = wall (blocked)  
 
 - **Directions:**  
-  - Up, Down, Left, Right  
+  - ⬆ Up, ⬇ Down, ⬅ Left, ➡ Right  
 
 - **DFS (Depth-First Search)**  
-  - Explores all possible paths  
+  - Explores **all possible paths**  
   - Uses **backtracking**  
-  - May not give the shortest path  
+  - May **not produce the shortest path**  
 
 - **BFS (Breadth-First Search)**  
-  - Explores level by level  
+  - Explores **level by level**  
   - Always finds the **shortest path**  
 
-- **Important C++ Concepts Used:**  
+- **C++ Concepts Used:**  
   - `vector<pair<int,int>>` for storing paths  
-  - 2D array for maze representation  
-  - `queue` for BFS implementation  
-  - `memset` for resetting visited arrays  
-  - `reverse()` to reconstruct BFS path correctly  
-  - Loops and indexing compatible with **C++11**  
+  - 2D arrays for the maze and visited cells  
+  - `queue` for BFS  
+  - `memset()` for resetting arrays  
+  - `reverse()` for reconstructing BFS path  
+  - Compatible with **C++11**  
 
-- **Console Visualization:**  
+- **Maze Visualization in Console:**  
   - `.` = path  
   - `#` = wall  
   - `*` = path found  
+
+---
+
+## 🎨 Example Maze & Output
+
+**Maze Layout (1 = path, 0 = wall):**  
+1 0 1 1 1
+
+1 0 1 0 1
+
+1 1 1 0 1
+
+0 0 0 0 1
+
+1 1 1 1 1
+
+
+---
+
+
+
+> ✅ Both paths are displayed with `*` marking the visited path. BFS guarantees the shortest path.  
 
 ---
 
@@ -52,3 +75,18 @@ This project implements a **Maze Solver** in C++ using **DFS (Depth-First Search
 
 ```bash
 git clone https://github.com/Sumit1164/Maze_Solver.git
+
+
+```
+
+
+
+🎯 Future Improvements
+
+Allow dynamic maze input from a file
+
+Add graphical visualization
+
+Handle larger mazes efficiently
+
+Support diagonal movements
