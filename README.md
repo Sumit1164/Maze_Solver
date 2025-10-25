@@ -80,8 +80,7 @@ git clone https://github.com/Sumit1164/Maze_Solver.git
 ```
 
 
-
-🎯 Future Improvements
+## 🎯 Future Improvements
 
 Allow dynamic maze input from a file
 
@@ -90,3 +89,13 @@ Add graphical visualization
 Handle larger mazes efficiently
 
 Support diagonal movements
+
+
+## 🛠 License
+
+This project is licensed under the **MIT License**. See [LICENSE](./LICENSE) for details.
+
+
+## 📌 Author
+
+Sumit1164
