@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -70,7 +69,9 @@ void bfs(int sx, int sy)
 
     while (!q.empty())
     {
-        auto [x, y] = q.front();
+        pair<int, int> front = q.front();
+        int x = front.first;
+        int y = front.second;
         q.pop();
 
         if (x == N - 1 && y == M - 1)
@@ -118,10 +119,12 @@ void printMazeWithPath(const vector<pair<int, int>> &path)
         for (int j = 0; j < M; ++j)
             display[i][j] = maze[i][j] ? '.' : '#';
 
-    for (const auto &p : path)
-        int x = p.first;
-        int y = p.second;
-    display[x][y] = '*';
+    for (size_t i = 0; i < path.size(); ++i)
+    {
+        int x = path[i].first;
+        int y = path[i].second;
+        display[x][y] = '*';
+    }
 
     for (int i = 0; i < N; ++i)
     {
@@ -134,46 +137,3 @@ void printMazeWithPath(const vector<pair<int, int>> &path)
 // ----------------------------------------
 // MAIN
 // ----------------------------------------
-int main()
-{
-    cout << "=== Maze Solver in C++ ===\n";
-
-    // ----- DFS -----
-    memset(visitedDFS, false, sizeof(visitedDFS));
-    cout << "\n--- DFS Path ---\n";
-    if (dfs(0, 0))
-    {
-        for (const auto &p : pathDFS)
-            int x = p.first;
-            int y = p.second;
-        cout << "(" << x << "," << y << ") -> ";
-        cout << "END\n";
-        printMazeWithPath(pathDFS);
-    }
-    else
-    {
-        cout << "No path found using DFS.\n";
-    }
-
-    // ----- BFS -----
-    memset(visitedBFS, false, sizeof(visitedBFS));
-    cout << "\n--- BFS (Shortest Path) ---\n";
-    bfs(0, 0);
-    vector<pair<int, int>> pathBFS = reconstructPath();
-
-    if (!pathBFS.empty())
-    {
-        for (const auto &p : pathBFS)
-            int x = p.first;
-            int y = p.second;
-        cout << "(" << x << "," << y << ") -> ";
-        cout << "END\n";
-        printMazeWithPath(pathBFS);
-    }
-    else
-    {
-        cout << "No path found using BFS.\n";
-    }
-
-    return 0;
-}
