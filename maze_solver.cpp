@@ -119,8 +119,9 @@ void printMazeWithPath(const vector<pair<int, int>> &path)
             display[i][j] = maze[i][j] ? '.' : '#';
 
     for (const auto &p : path)
-        
-        display[x][y] = '*';
+        int x = p.first;
+        int y = p.second;
+    display[x][y] = '*';
 
     for (int i = 0; i < N; ++i)
     {
