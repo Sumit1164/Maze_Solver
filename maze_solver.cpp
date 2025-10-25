@@ -137,3 +137,51 @@ void printMazeWithPath(const vector<pair<int, int>> &path)
 // ----------------------------------------
 // MAIN
 // ----------------------------------------
+
+int main()
+{
+    cout << "=== Maze Solver in C++ ===\n";
+
+    // ----- DFS -----
+    memset(visitedDFS, false, sizeof(visitedDFS));
+    cout << "\n--- DFS Path ---\n";
+    if (dfs(0, 0))
+    {
+        for (size_t i = 0; i < pathDFS.size(); ++i)
+        {
+            int x = pathDFS[i].first;
+            int y = pathDFS[i].second;
+            cout << "(" << x << "," << y << ") -> ";
+        }
+        cout << "END\n";
+        printMazeWithPath(pathDFS);
+    }
+    else
+    {
+        cout << "No path found using DFS.\n";
+    }
+
+    // ----- BFS -----
+    memset(visitedBFS, false, sizeof(visitedBFS));
+    cout << "\n--- BFS (Shortest Path) ---\n";
+    bfs(0, 0);
+    vector<pair<int, int>> pathBFS = reconstructPath();
+
+    if (!pathBFS.empty())
+    {
+        for (size_t i = 0; i < pathBFS.size(); ++i)
+        {
+            int x = pathBFS[i].first;
+            int y = pathBFS[i].second;
+            cout << "(" << x << "," << y << ") -> ";
+        }
+        cout << "END\n";
+        printMazeWithPath(pathBFS);
+    }
+    else
+    {
+        cout << "No path found using BFS.\n";
+    }
+
+    return 0;
+}
