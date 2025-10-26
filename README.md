@@ -53,6 +53,7 @@ The program finds a path from the top-left to the bottom-right corner of a maze 
 
 ## 🎨 Example Maze & Output
 
+<img src="https://github.com/user-attachments/assets/bcc5fa8b-3666-4802-8bf1-8fb8adf881ac" alt="Demo Image" width="900px"/>
 <img src="https://github.com/user-attachments/assets/1840ebf5-d548-409d-bcde-90a139c744ea" alt="Demo Image" width="300"/>
 <img src="https://github.com/user-attachments/assets/c489996b-f5c7-41dd-9503-8e94c77b52aa" alt="Demo Image" width="300"/>
 
