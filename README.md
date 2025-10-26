@@ -3,6 +3,10 @@
 A **console-based maze solver** implemented in C++ using **DFS (Depth-First Search)** and **BFS (Breadth-First Search)** algorithms.  
 The program finds a path from the top-left to the bottom-right corner of a maze and displays it visually.  
 
+
+![maze](https://github.com/user-attachments/assets/77936255-89bc-4a78-8157-d9a66bb3f43f)
+
+
 ---
 
 ## 📝 Features
@@ -48,6 +52,11 @@ The program finds a path from the top-left to the bottom-right corner of a maze 
 ---
 
 ## 🎨 Example Maze & Output
+
+<img src="https://github.com/user-attachments/assets/1840ebf5-d548-409d-bcde-90a139c744ea" alt="Demo Image" width="300"/>
+<img src="https://github.com/user-attachments/assets/c489996b-f5c7-41dd-9503-8e94c77b52aa" alt="Demo Image" width="300"/>
+
+
 
 **Maze Layout (1 = path, 0 = wall):**  
 1 0 1 1 1
